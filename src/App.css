@@ -1,38 +1,94 @@
-.App {
-  text-align: center;
+body,
+html,
+#root {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    217deg,
+    rgba(95, 95, 95, 0.8),
+    rgba(255, 0, 0, 0) 70.71%
+  );
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.resultsContainer {
+  background-color: white;
+  width: 500px;
+  height: 500px;
+  left: 0;
+  right: 0;
+  top: 40%;
+  bottom: 60%;
+  margin: auto;
+  border-radius: 16px;
+  color: black;
+  font-family: Verdana, Tahoma, sans-serif;
+  position: absolute;
+  align-content: center;
+  overflow: hidden;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.stateName {
+  background-color: darkblue;
+  width: 100%;
+  height: auto;
   color: white;
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
+.positiveContainer {
+  border-top: solid black;
+  text-align: center;
+  background: linear-gradient(
+    217deg,
+    rgba(5, 27, 124, 0.8),
+    rgba(0, 0, 0, 0) 70.71%
+  );
+  width: 100%;
+  height: 100%;
+  padding: 5px;
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: 80%;
+  bottom: 20%;
+  align-content: center;
 }
 
-.App-link {
-  color: #61dafb;
+.dropDownContainer {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  bottom: 25%;
+  align-content: center;
+  margin: auto;
+  left: 0;
+  right: 0;
+  padding: 25px;
+}
+p {
+  font-size: 64px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.totalPositive {
+  display: flex;
+  justify-content: center;
+}
+
+.numberPositiveContainer {
+  position: relative;
+  left: 0;
+  right: 0;
+  top: 15%;
+  bottom: 85%;
+  margin: auto;
+  align-content: center;
+}
+
+.positiveIncreased p {
+  font-size: 36px;
+}
+
+.title {
+  font-size: 36px;
 }
