@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { Dropdown } from "semantic-ui-react";
 import "semantic-ui-css/semantic.min.css";
 
+var convertTime = require("convert-time");
 const US_STATES = require("./files/US_States.json");
 
 const allStates = Object.values(US_STATES).map((item, key) => ({
@@ -30,6 +31,18 @@ function App() {
         setLoading(false);
       });
   }, []);
+
+  function formatDate(date) {
+    var array = date.split(" ");
+
+    var timeString = array[1].toString();
+    console.log(timeString);
+    var convertedTime = convertTime(timeString);
+
+    console.log(convertedTime);
+
+    return array[0] + " " + convertedTime;
+  }
 
   if (loading) {
     return <div>Loading</div>;
@@ -66,6 +79,11 @@ function App() {
               </p>
             </div>
           </div>
+        </div>
+
+        <div className="lastUpdatedContainer">
+          <p id="#titleUpdated">Last Updated: </p>
+          <p>{formatDate(covidResults[selectedState].lastUpdateEt)}</p>
         </div>
       </div>
 
