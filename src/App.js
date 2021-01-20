@@ -3,6 +3,7 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import { Dropdown } from "semantic-ui-react";
 import "semantic-ui-css/semantic.min.css";
+import FadeIn from "react-fade-in";
 
 var convertTime = require("convert-time");
 const US_STATES = require("./files/US_States.json");
@@ -33,15 +34,19 @@ function App() {
   }, []);
 
   function formatDate(date) {
-    var array = date.split(" ");
+    if (date != null) {
+      var array = date.split(" ");
 
-    var timeString = array[1].toString();
-    console.log(timeString);
-    var convertedTime = convertTime(timeString);
+      var timeString = array[1].toString();
+      console.log(timeString);
+      var convertedTime = convertTime(timeString);
 
-    console.log(convertedTime);
+      console.log(convertedTime);
 
-    return array[0] + " " + convertedTime;
+      return array[0] + " " + convertedTime;
+    } else {
+      return "No update time available";
+    }
   }
 
   if (loading) {
