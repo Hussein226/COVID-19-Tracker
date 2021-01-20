@@ -44,7 +44,7 @@ function App() {
 
       return array[0] + " " + convertedTime;
     } else {
-      return "No update time available";
+      return "No update time available from API";
     }
   }
 
