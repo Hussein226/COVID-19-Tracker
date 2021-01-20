@@ -3,7 +3,6 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import { Dropdown } from "semantic-ui-react";
 import "semantic-ui-css/semantic.min.css";
-import FadeIn from "react-fade-in";
 
 var convertTime = require("convert-time");
 const US_STATES = require("./files/US_States.json");
