@@ -47,12 +47,35 @@ html,
   width: 100%;
   height: 70%;
   padding: 5px;
-  margin: auto;
+
+  grid-template-columns: 1fr, 1fr, 1fr 1fr;
+  grid-template-rows: 1fr, 1fr;
+  grid-gap: 0.5rem;
+  display: grid;
   left: 0;
   right: 0;
   top: 80%;
   bottom: 20%;
   align-content: center;
+
+  grid-template-areas:
+    "childPostivieContainer childPostivieContainer childPostivieContainer childPostivieContainer"
+    "hospitilizedContainer hospitilizedContainer deathContainer deathContainer";
+}
+
+.childPostivieContainer {
+  grid-area: childPostivieContainer;
+  border-radius: 5px;
+  border-bottom: 2px solid black;
+}
+
+.hospitlizedContainer {
+  grid-area: hospitilizedContainer;
+  border-right: 2px solid black;
+}
+
+.deathContainer {
+  grid-area: deathContainer;
 }
 
 .dropDownContainer {
@@ -64,12 +87,11 @@ html,
   margin: auto;
   left: 0;
   right: 0;
-  padding: 25px;
 }
-p {
+/* p {
   font-size: 64px;
   font-family: cursive;
-}
+} */
 
 .totalPositive {
   display: flex;
@@ -80,19 +102,11 @@ p {
   position: relative;
   left: 0;
   right: 0;
-  top: 15%;
-  bottom: 85%;
-  margin: auto;
   align-content: center;
 }
 
-.positiveIncreased p {
-  font-size: 36px;
-  font-family: cursive;
-}
-
-.title {
-  font-size: 36px;
+.numberPositiveContainer p {
+  font-size: 24px;
 }
 
 .lastUpdatedContainer {

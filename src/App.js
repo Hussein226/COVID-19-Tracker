@@ -64,24 +64,60 @@ function App() {
         </div>
 
         <div className="positiveContainer">
-          <h2 className="title">Total COVID-19 Cases:</h2>
-
-          <div className="numberPositiveContainer">
-            <div className="totalPositive">
+          <div className="childPostivieContainer">
+            <h2 className="title">Total COVID-19 Cases:</h2>
+            <div className="numberPositiveContainer">
               <p>
+                Total:
                 {new Intl.NumberFormat().format(
                   covidResults[selectedState].positive
                 )}
               </p>
-            </div>
-            <div className="positiveIncreased">
+
               <p>
-                +
+                New cases:
                 {new Intl.NumberFormat().format(
                   covidResults[selectedState].positiveIncrease
                 )}
               </p>
             </div>
+          </div>
+          <div className="hospitlizedContainer">
+            <h1>Hospitalized</h1>
+
+            <div>
+              <p>
+                Total:
+                {new Intl.NumberFormat().format(
+                  covidResults[selectedState].hospitalized
+                )}
+              </p>
+
+              <p>
+                New hospitalized:
+                {new Intl.NumberFormat().format(
+                  covidResults[selectedState].hospitalizedIncrease
+                )}
+              </p>
+            </div>
+          </div>
+
+          <div className="deathContainer">
+            <h1>Deaths</h1>
+
+            <p>
+              Total:
+              {new Intl.NumberFormat().format(
+                covidResults[selectedState].death
+              )}
+            </p>
+
+            <p>
+              New Deaths:
+              {new Intl.NumberFormat().format(
+                covidResults[selectedState].deathIncrease
+              )}
+            </p>
           </div>
         </div>
 
@@ -100,6 +136,8 @@ function App() {
           onChange={selectedStateHandler}
         />
       </div>
+
+      {console.log(covidResults)}
     </div>
   );
 }
